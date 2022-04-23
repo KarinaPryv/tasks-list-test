@@ -1,0 +1,10 @@
+<h2>Plan your day!</h2>
+<h4>User: Ivan Ivanov. Count of Task {{ countOfTasks }}</h4>
+<form #addTaskForm="ngForm" (ngSubmit)="addNewTask(addTaskForm)">
+    <div class="d-flex justify-content-between">
+        <input type="text" name="task" [(ngModel)]="newTaskName" required>
+        <input type="submit" value="add" [disabled]="!addTaskForm.form.valid">
+    </div>
+</form>
+
+<app-tasks-table [tasks]="tasksArr"></app-tasks-table>
